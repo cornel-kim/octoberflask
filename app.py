@@ -36,6 +36,20 @@ def contact():
         return render_template("contact.html")
 
 
+@app.route('/view')
+def view():
+    conn = pymysql.connect("localhost", "root", "", "oct_class")
+    cursor = conn.cursor()
+    select_query = "SELECT * FROM contact_tbl"
+    cursor.execute(select_query)
+    if cursor.rowcount<1:
+        return render_template("view_contact.html", msg = "No records found")
+    else:
+        rows = cursor.fetchall()
+        return render_template("view_contact.html", rows=rows)
+
+
+
 if __name__ == '__main__':
     app.run()
     app.debug(True)

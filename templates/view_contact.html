@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View User</title>
+</head>
+<body>
+<h2>{{msg}}</h2>
+<table>
+    <tr>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Message</th>
+
+    </tr>
+    {%for row in rows%}
+    <tr>
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+
+    </tr>
+    {%endfor%}
+</table>
+
+</body>
+</html>
