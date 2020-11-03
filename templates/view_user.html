@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View user</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<a href="/viewuser">View user</a>
+<a href="/contact">contact us</a>
+<a href="/view">View message</a>
+
+<h2>{{msg}}</h2>
+<table class="table">
+    <tr scope="row">
+        <th>username</th>
+        <th>firstname</th>
+        <th>lastname</th>
+        <th>email</th>
+
+    </tr>
+    {%block content%}
+    <tr>
+        <td>{{result[0]}}</td>
+        <td>{{result[1]}}</td>
+        <td>{{result[2]}}</td>
+        <td>{{result[3]}}</td>
+
+    </tr>
+    {%endblock%}
+</table>
+
+</body>
+</html>
